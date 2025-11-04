@@ -1,9 +1,21 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
+import { ThemeProvider } from './lib/contexts/ThemeContext';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+function renderWithTheme() {
+  return render(
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
+}
+
+test('toggles data-theme attribute from light to dark', () => {
+  renderWithTheme();
+  const toggleBtn = screen.getByRole('button', { name: /toggle theme/i });
+  // initial theme should be light
+  expect(document.documentElement.getAttribute('data-theme')).toBe('light');
+  fireEvent.click(toggleBtn);
+  expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
 });

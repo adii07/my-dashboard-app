@@ -1,0 +1,2 @@
+export const THEME_STORAGE_KEY = "app:theme" as const;
+export const DEFAULT_THEME = "light" as const;
