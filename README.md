@@ -11,6 +11,20 @@ Responsive, themeable analytics dashboard with range-based stats, tables, and ch
 - Error-safe data fetching structure (extensible)
 - Jest + React Testing Library component tests
 
+## Demo
+Watch a short demo of the dashboard here:
+
+https://drive.google.com/file/d/1ZP1dRWsFWe59jDkn9siujGvbGW8hGjtL/view?usp=drive_link
+
+If the link does not open directly, copy & paste into your browser. The video showcases theme toggling, range filtering, multi-series chart behavior, and loading skeleton transitions.
+
+## Live Site
+Access the deployed application here:
+
+https://my-dashboard-app-woad.vercel.app/
+
+The live site reflects the latest main branch: theme toggle, responsive layout, range-driven stats/tables, multi-series charts, and skeleton loading states.
+
 ## Quick Start
 Install deps and run the dev server:
 
