@@ -1,4 +1,8 @@
 {
-    "data": 987,
-    "growth": -0.9
+    "ranges": {
+        "7d": { "data": 51, "growth": -1.2 },
+        "1m": { "data": 987, "growth": -0.9 },
+        "1y": { "data": 11430, "growth": 4.1 },
+        "all": { "data": 32560, "growth": 0.0 }
+    }
 }

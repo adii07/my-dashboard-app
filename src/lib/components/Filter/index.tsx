@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './index.module.css';
 import { FilterProps, RangeKey } from '../../types/Filter';
+import { useRange } from '../../context/RangeContext';
 const OPTIONS: { key: RangeKey; label: string }[] = [
     { key: '7d', label: 'Last 7 Days' },
     { key: '1m', label: 'Last 1 Month' },
@@ -9,17 +10,21 @@ const OPTIONS: { key: RangeKey; label: string }[] = [
 ];
 
 const Filter = ({ value, onChange, label = 'Range' }: FilterProps) => {
-    const [selected, setSelected] = useState<RangeKey>(value ?? '1m');
+    const { range, setRange } = useRange();
+    const [selected, setSelected] = useState<RangeKey>(value ?? range);
 
     useEffect(() => {
         if (value && value !== selected) {
             setSelected(value);
+        } else if (!value && range !== selected) {
+            setSelected(range);
         }
-    }, [value, selected]);
+    }, [value, selected, range]);
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const val = e.target.value as RangeKey;
         setSelected(val);
+        setRange(val);
         onChange?.(val);
     };
 

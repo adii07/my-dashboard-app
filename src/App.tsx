@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Dashboard from "./lib/components/Dashboard";
 import ThemeToggle from "./lib/components/ToggleTheme";
+import { RangeProvider } from './lib/context/RangeContext';
 import Sidebar from './lib/components/Sidebar';
 import sidebarStyles from './lib/components/Sidebar/index.module.css';
 
@@ -10,18 +11,20 @@ function App() {
 
   const contentOffsetClass = open ? sidebarStyles.mainContentOffsetExpanded : sidebarStyles.mainContentOffsetCollapsed;
   return (
-    <div className="App" style={{ display: 'flex' }}>
-      <Sidebar
-        open={open}
-        category={category}
-        onSelect={setCategory}
-        onToggle={() => setOpen(o => !o)}
-      />
-      <div className={contentOffsetClass} style={{ flex: 1, padding: '16px', minWidth: 0 }}>
-        <ThemeToggle />
-        <Dashboard/>
+    <RangeProvider>
+      <div className="App" style={{ display: 'flex' }}>
+        <Sidebar
+          open={open}
+          category={category}
+          onSelect={setCategory}
+          onToggle={() => setOpen(o => !o)}
+        />
+        <div className={contentOffsetClass} style={{ flex: 1, padding: '16px', minWidth: 0 }}>
+          <ThemeToggle />
+          <Dashboard />
+        </div>
       </div>
-    </div>
+    </RangeProvider>
   );
 }
 

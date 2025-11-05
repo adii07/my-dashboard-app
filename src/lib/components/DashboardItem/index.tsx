@@ -13,9 +13,9 @@ const DashboardItem = (WidgetData: WidgetConfig) => {
             const json = await response.json();
             // For stat widgets we keep the whole object (contains growth); others just need the data array/value
             if (type === "stat") {
-                setData(json); // { data: number, growth?: number }
+                setData(json); // keep full object (may contain ranges)
             } else {
-                setData(json.data);
+                setData(json.data); // charts/tables use json.data
             }
         };
         fetchData();
@@ -26,7 +26,7 @@ const DashboardItem = (WidgetData: WidgetConfig) => {
 
         switch (type) {
             case "stat":
-                return <StatWidget title={title} data={data.data} growth={data.growth} />;
+                return <StatWidget title={title} rawData={data} />;
             case "chart":
                 return <ChartWidget title={title} data={data} />;
             case "table":
