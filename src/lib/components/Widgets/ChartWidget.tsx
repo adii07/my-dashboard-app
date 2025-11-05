@@ -2,8 +2,6 @@ import HighchartsReact from "highcharts-react-official";
 import { useMemo } from "react";
 import Highcharts from "highcharts";
 const ChartWidget = ({ title, data }: any) => {
-    console.log("Chart Widget Data:", data);
-
     const options: Highcharts.Options = useMemo(() => {
         const categories = data.map((d:any) => d.month);
         const itemsSoldSeries = data.map((d:any) => d.itemsSold);
