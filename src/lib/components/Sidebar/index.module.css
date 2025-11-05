@@ -123,13 +123,16 @@
 .internalToggle{
     width: fit-content;
     align-items: center;
-    background-color: white;
+background: var(--bg);
+    color: var(--bg);
 }
 .sidebarHeader{
     display: none;
 }
 .navButton{
-     background-color: white;
+    color: var(--text);
+    background-color: var(--bg);
+    
 
 }
 .navButtonActive {
