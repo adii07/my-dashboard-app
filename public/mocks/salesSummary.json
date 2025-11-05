@@ -2,16 +2,16 @@
   "data": [
     { "month": "Jan", "itemsSold": 2100, "revenue": 52500 },
     { "month": "Feb", "itemsSold": 2450, "revenue": 61200 },
-    { "month": "Mar", "itemsSold": 2730, "revenue": 67000 },
+    { "month": "Mar", "itemsSold": 11730, "revenue": 67000 },
     { "month": "Apr", "itemsSold": 2980, "revenue": 71200 },
-    { "month": "May", "itemsSold": 3200, "revenue": 75900 },
-    { "month": "Jun", "itemsSold": 3410, "revenue": 81200 },
+    { "month": "May", "itemsSold": 2200, "revenue": 75900 },
+    { "month": "Jun", "itemsSold": 24100, "revenue": 81200 },
     { "month": "Jul", "itemsSold": 3620, "revenue": 84600 },
-    { "month": "Aug", "itemsSold": 3880, "revenue": 90200 },
+    { "month": "Aug", "itemsSold": 7880, "revenue": 90200 },
     { "month": "Sep", "itemsSold": 3590, "revenue": 84000 },
     { "month": "Oct", "itemsSold": 4010, "revenue": 93200 },
-    { "month": "Nov", "itemsSold": 4300, "revenue": 102300 },
-    { "month": "Dec", "itemsSold": 4560, "revenue": 109800 }
+    { "month": "Nov", "itemsSold": 6300, "revenue": 102300 },
+    { "month": "Dec", "itemsSold": 27560, "revenue": 109800 }
   ],
   "keys": {
     "xKey": "month",
