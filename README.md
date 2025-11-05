@@ -95,6 +95,7 @@ Portions of this project were created or refined with the assistance of an AI co
 | Dummy data | Produced the shape and sample values for mock JSON in `public/mocks/` (sales summary, user growth, top products/returns, user stats). |
 | Loading state & skeleton | Implemented reusable skeleton component with shimmer animation and integrated per widget type. |
 | Chart layout & Highcharts integration | Accelerated first-time Highcharts setup: multi-series configuration, dynamic detection of series keys, legend & shared tooltip behavior. |
+| Code cleanup & typing finalization | Assisted in refactoring to remove remaining `any` usages, introducing unified normalized widget data types and ensuring stronger compile-time guarantees. |
 
 If any of these generated sections require further clarification or tailoring, feel free to refine them.
 

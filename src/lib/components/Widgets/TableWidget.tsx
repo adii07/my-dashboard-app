@@ -1,6 +1,6 @@
 import { TableWidgetProps, TableRangeEntry } from "../../types/WidgetTypes";
 import styles from './TableWidget.module.css';
-import { useRange } from "../../context/RangeContext";
+import { useRange } from "../../contexts/RangeContext";
 
 const TableWidget = ({ title, rawData }: TableWidgetProps) => {
     const { range } = useRange();
@@ -27,7 +27,7 @@ const TableWidget = ({ title, rawData }: TableWidgetProps) => {
                     </thead>
                     <tbody className={styles.tbody}>
                         {rows.map((row) => (
-                            <tr key={(row as any).productId || JSON.stringify(row)} tabIndex={0}>
+                            <tr key={(row as unknown as { productId?: string }).productId || JSON.stringify(row)} tabIndex={0}>
                                 {columns.map((col) => (
                                     <td key={col} className={typeof row[col] === 'number' ? styles.cell_numeric : undefined}>{row[col]}</td>
                                 ))}

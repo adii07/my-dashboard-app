@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Dashboard from './index';
-import { RangeProvider } from '../../context/RangeContext';
+import { RangeProvider } from '../../contexts/RangeContext';
 
 jest.mock('../DashboardItem', () => (props: any) => <div data-testid='widget' data-type={props.type}>{props.title}</div>);
 

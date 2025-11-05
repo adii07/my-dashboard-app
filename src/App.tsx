@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Dashboard from "./lib/components/Dashboard";
 import ThemeToggle from "./lib/components/ToggleTheme";
-import { RangeProvider } from './lib/context/RangeContext';
+import { RangeProvider } from './lib/contexts/RangeContext';
 import Sidebar from './lib/components/Sidebar';
 import sidebarStyles from './lib/components/Sidebar/index.module.css';
 

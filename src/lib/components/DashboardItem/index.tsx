@@ -3,10 +3,11 @@ import styles from './index.module.css'
 import { ChartWidget, StatWidget, TableWidget } from "../Widgets";
 import Skeleton from "../Loading/Skeleton";
 import { useEffect, useState } from "react";
+import { NormalizedWidgetData, NormalizedChartData, NormalizedStatData, NormalizedTableData, isChartData } from '../../types/NormalizedWidgetData';
 
 const DashboardItem = (WidgetData: WidgetConfig) => {
     const { title, dataSource, type, field } = WidgetData;
-    const [data, setData] = useState<any>(null);
+    const [data, setData] = useState<NormalizedWidgetData | null>(null);
     
     useEffect(() => {
         const fetchData = async () => {
@@ -35,7 +36,20 @@ const DashboardItem = (WidgetData: WidgetConfig) => {
                         setData(json);
                     }
                 } else if (type === 'chart') {
-                    setData(json);
+                    // Accept either { data: [...], keys } or fallback build keys from first entry
+                    if (json.data && json.keys) {
+                        setData(json as NormalizedChartData);
+                    } else if (json.data && Array.isArray(json.data)) {
+                        const first = json.data[0] || {};
+                        const xKey = Object.keys(first).find(k => typeof first[k] === 'string') || 'month';
+                        const yKeys = Object.keys(first).filter(k => k !== xKey && typeof first[k] === 'number');
+                        setData({ data: json.data, keys: { xKey, yKeys } });
+                    } else if (Array.isArray(json)) {
+                        const first = json[0] || {};
+                        const xKey = Object.keys(first).find(k => typeof first[k] === 'string') || 'month';
+                        const yKeys = Object.keys(first).filter(k => k !== xKey && typeof first[k] === 'number');
+                        setData({ data: json, keys: { xKey, yKeys } });
+                    }
                 }
             } catch (e) {
                 console.error('Failed to fetch', dataSource, e);
@@ -46,17 +60,16 @@ const DashboardItem = (WidgetData: WidgetConfig) => {
 
     const renderWidget = () => {
         if (!data) return <Skeleton type={type} title={title} />;
-
-        switch (type) {
-            case "stat":
-                return <StatWidget title={title} rawData={data} />;
-            case "chart":
-                return <ChartWidget title={title} rawData={data} />;
-            case "table":
-                return <TableWidget title={title} rawData={data} />;
-            default:
-                return <>Unknown Widget Type</>;
+        if (type === 'stat') {
+            return <StatWidget title={title} rawData={data as NormalizedStatData} />;
         }
+        if (type === 'chart') {
+            return <ChartWidget title={title} rawData={data as NormalizedChartData} />;
+        }
+        if (type === 'table') {
+            return <TableWidget title={title} rawData={data as NormalizedTableData} />;
+        }
+        return <>Unknown Widget Type</>;
     }
 
     return (<>

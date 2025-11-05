@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import StatWidget from './StatWidget';
-import { RangeProvider } from '../../context/RangeContext';
+import { RangeProvider } from '../../contexts/RangeContext';
 
 describe('StatWidget', () => {
   const ranges = {

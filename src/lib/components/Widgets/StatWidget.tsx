@@ -1,7 +1,7 @@
 import { StatWidgetType, StatRangeEntry } from "../../types/WidgetTypes";
 import styles from './index.module.css';
 import cx from "classnames";
-import { useRange } from "../../context/RangeContext";
+import { useRange } from "../../contexts/RangeContext";
 
 const StatWidget = ({ title, rawData }: StatWidgetType) => {
     const { range } = useRange();

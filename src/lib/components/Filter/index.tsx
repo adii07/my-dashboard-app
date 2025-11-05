@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './index.module.css';
 import { FilterProps, RangeKey } from '../../types/Filter';
-import { useRange } from '../../context/RangeContext';
+import { useRange } from '../../contexts/RangeContext';
 const OPTIONS: { key: RangeKey; label: string }[] = [
     { key: '7d', label: 'Last 7 Days' },
     { key: '1m', label: 'Last 1 Month' },

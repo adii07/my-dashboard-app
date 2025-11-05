@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Filter from './index';
-import { RangeProvider } from '../../context/RangeContext';
+import { RangeProvider } from '../../contexts/RangeContext';
 
 describe('Filter', () => {
   test('changes selected range', () => {

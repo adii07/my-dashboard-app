@@ -4,15 +4,19 @@ import Highcharts from "highcharts";
 import styles from './index.module.css';
 import cx from "classnames";
 
-const ChartWidget = ({ title, rawData }: any) => {
+import { NormalizedChartData } from '../../types/NormalizedWidgetData';
+
+interface ChartWidgetProps { title: string; rawData: NormalizedChartData; }
+
+const ChartWidget = ({ title, rawData }: ChartWidgetProps) => {
     const { data, keys } = rawData;
     const itemsKey = keys?.yKeys?.[0]; // itemsSold
     const revenueKey = keys?.yKeys?.[1]; // revenue (second line)
     
     const options: Highcharts.Options = useMemo(() => {
-        const categories = data.map((d: any) => d[keys.xKey]);
-        const itemsSeries = itemsKey ? data.map((d: any) => d[itemsKey]) : [];
-        const revenueSeries = revenueKey ? data.map((d: any) => d[revenueKey]) : [];
+        const categories = data.map((d) => d[keys.xKey] as string);
+        const itemsSeries = itemsKey ? data.map((d) => d[itemsKey] as number) : [];
+        const revenueSeries = revenueKey ? data.map((d) => d[revenueKey] as number) : [];
 
 
         return {
