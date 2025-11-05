@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './index.module.css';
+import { useTheme } from '../../hooks/useTheme';
 type DashboardCategory = 'user' | 'sales';
 interface SidebarProps {
   open: boolean;
@@ -9,8 +10,9 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ open, category, onSelect, onToggle }) => {
-  const closedIconSrc = 'https://img.icons8.com/?size=100&id=97654&format=png&color=000000';
-  const openIconSrc = 'https://img.icons8.com/?size=100&id=97654&format=png&color=000000';
+  const { theme } = useTheme();
+  const iconColor = theme === 'dark' ? 'FFFFFF' : '000000';
+  const iconSrc = `https://img.icons8.com/?size=100&id=97654&format=png&color=${iconColor}`;
   return (
     <aside className={`${styles.sidebar} ${open ? styles.expanded : styles.collapsed}`}>      
       <button
@@ -20,7 +22,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, category, onSelect, onToggle })
         onClick={onToggle}
       >
         <img
-          src={open ? openIconSrc : closedIconSrc}
+          src={iconSrc}
           alt={open ? 'Collapse sidebar' : 'Expand sidebar'}
           width={24}
           height={24}
