@@ -12,5 +12,9 @@
     { "month": "Oct", "itemsSold": 4010, "revenue": 93200 },
     { "month": "Nov", "itemsSold": 4300, "revenue": 102300 },
     { "month": "Dec", "itemsSold": 4560, "revenue": 109800 }
-  ]
+  ],
+  "keys": {
+    "xKey": "month",
+    "yKeys": ["itemsSold", "revenue"]
+  }
 }

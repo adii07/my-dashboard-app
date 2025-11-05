@@ -4,10 +4,14 @@ import Highcharts from "highcharts";
 import styles from './index.module.css';
 import cx from "classnames";
 
-const ChartWidget = ({ title, data }: any) => {
+const ChartWidget = ({ title, rawData }: any) => {
+    const{data,keys}=rawData;
+    const key = keys.yKeys[0];
+    
     const options: Highcharts.Options = useMemo(() => {
         const categories = data.map((d:any) => d.month);
-        const itemsSoldSeries = data.map((d:any) => d.itemsSold);
+        const itemsSoldSeries = data.map((d:any) => d[key]);
+        
 
         return {
             chart: {
@@ -15,12 +19,12 @@ const ChartWidget = ({ title, data }: any) => {
                 backgroundColor: "transparent",
             },
             title: {
-                text: "Monthly Items Sold",
+                text: title,
                 style: { fontSize: "16px", fontWeight: "bold" },
             },
             xAxis: {
                 categories,
-                title: { text: "Month" },
+                title: { text: keys.xKey },
             },
             yAxis: {
                 title: { text: "Items Sold" },

@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 const DashboardItem = (WidgetData: WidgetConfig) => {
     const { title, dataSource, type, field } = WidgetData;
     const [data, setData] = useState<any>(null);
-    console.log(title,dataSource,type);
     
     useEffect(() => {
         const fetchData = async () => {
@@ -35,8 +34,6 @@ const DashboardItem = (WidgetData: WidgetConfig) => {
                         setData(json);
                     }
                 } else if (type === 'chart') {
-                    setData(json.data || json);
-                } else {
                     setData(json);
                 }
             } catch (e) {
@@ -53,7 +50,7 @@ const DashboardItem = (WidgetData: WidgetConfig) => {
             case "stat":
                 return <StatWidget title={title} rawData={data} />;
             case "chart":
-                return <ChartWidget title={title} data={data} />;
+                return <ChartWidget title={title} rawData={data} />;
             case "table":
                 return <TableWidget title={title} rawData={data} />;
             default:

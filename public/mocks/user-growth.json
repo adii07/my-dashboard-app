@@ -12,5 +12,9 @@
     { "month": "Oct", "totalUsers": 34900, "newUsers": 3700 },
     { "month": "Nov", "totalUsers": 43600, "newUsers": 8700 },
     { "month": "Dec", "totalUsers": 52340, "newUsers": 8740 }
-  ]
+  ],
+  "keys": {
+    "xKey": "month",
+    "yKeys": ["totalUsers", "newUsers"]
+  }
 }
