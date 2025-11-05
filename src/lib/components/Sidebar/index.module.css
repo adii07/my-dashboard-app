@@ -1,0 +1,111 @@
+/* Sidebar supports two widths: collapsed (56px) and expanded (240px) */
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0; /* top:0 left:0 bottom:0 */
+  height: 100vh;
+  background: var(--surface-bg);
+  border-right: 1px solid var(--border);
+  box-shadow: 2px 0 6px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  padding: 12px 10px;
+  gap: 12px;
+  z-index: 900;
+  width: var(--sidebar-width, 240px);
+  transition: width 0.25s ease, background 0.25s ease;
+  overflow: hidden;
+}
+
+.sidebarHeader {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0 0 4px;
+}
+
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.navButton {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border-radius: 6px;
+  color: var(--text);
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.navButton:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+.navButtonActive {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+/* Toggle button lives INSIDE the sidebar now */
+.internalToggle {
+  background: var(--surface-bg); /* neutral surface background */
+  color: var(--text);
+  width: 100%;
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.internalToggle:hover {
+  background: var(--border); /* subtle hover */
+  color: var(--text);
+}
+
+/* Collapsed state reduces width; content beyond width hidden */
+.collapsed {
+  --sidebar-width: 44px; /* slimmer collapsed width */
+}
+
+.expanded {
+  --sidebar-width: 240px;
+}
+
+/* Utility class for main content offset when sidebar expanded */
+.mainContentOffsetExpanded {
+  margin-left: 240px;
+  transition: margin-left 0.25s ease;
+}
+
+.mainContentOffsetCollapsed {
+  margin-left: 44px; /* match slimmer collapsed sidebar */
+  transition: margin-left 0.25s ease;
+}
+
+@media (max-width: 900px) {
+  .mainContentOffsetExpanded,
+  .mainContentOffsetCollapsed {
+    margin-left: 0; /* stack on small screens */
+  }
+}
