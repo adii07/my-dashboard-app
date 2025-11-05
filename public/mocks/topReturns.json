@@ -1,0 +1,40 @@
+{
+  "columns": ["productId", "name", "category", "returnRate", "totalReturns"],
+  "rows": [
+    {
+      "productId": "F890",
+      "name": "Bluetooth Headphones X100",
+      "category": "Electronics",
+      "returnRate": "8.3%",
+      "totalReturns": 125
+    },
+    {
+      "productId": "G234",
+      "name": "Ceramic Cookware Set",
+      "category": "Home & Kitchen",
+      "returnRate": "6.5%",
+      "totalReturns": 98
+    },
+    {
+      "productId": "H678",
+      "name": "Men’s Running Shoes ProFlex",
+      "category": "Fashion",
+      "returnRate": "5.9%",
+      "totalReturns": 87
+    },
+    {
+      "productId": "I901",
+      "name": "Smartwatch Series 3",
+      "category": "Electronics",
+      "returnRate": "5.1%",
+      "totalReturns": 73
+    },
+    {
+      "productId": "J345",
+      "name": "Wireless Mouse Combo",
+      "category": "Office",
+      "returnRate": "4.8%",
+      "totalReturns": 65
+    }
+  ]
+}
