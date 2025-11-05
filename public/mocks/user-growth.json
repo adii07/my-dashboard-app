@@ -1,0 +1,16 @@
+{
+  "data": [
+    { "month": "Jan", "totalUsers": 12000, "newUsers": 1200 },
+    { "month": "Feb", "totalUsers": 14100, "newUsers": 2100 },
+    { "month": "Mar", "totalUsers": 16250, "newUsers": 2150 },
+    { "month": "Apr", "totalUsers": 18500, "newUsers": 2250 },
+    { "month": "May", "totalUsers": 20740, "newUsers": 2240 },
+    { "month": "Jun", "totalUsers": 23400, "newUsers": 2660 },
+    { "month": "Jul", "totalUsers": 25820, "newUsers": 2420 },
+    { "month": "Aug", "totalUsers": 28800, "newUsers": 2980 },
+    { "month": "Sep", "totalUsers": 31200, "newUsers": 2400 },
+    { "month": "Oct", "totalUsers": 34900, "newUsers": 3700 },
+    { "month": "Nov", "totalUsers": 43600, "newUsers": 8700 },
+    { "month": "Dec", "totalUsers": 52340, "newUsers": 8740 }
+  ]
+}

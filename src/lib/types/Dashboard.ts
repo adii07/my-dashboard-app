@@ -5,6 +5,7 @@ export interface WidgetConfig {
   type: WidgetType;
   title: string;
   dataSource: string;
+  field?: string; // optional key for stat widgets when source JSON is a summary object
 }
 
 export type DashboardConfig = WidgetConfig[];

@@ -1,0 +1,9 @@
+{
+  "totalUsers": 52340,
+  "activeUsers30d": 28750,
+  "dailyActiveUsers": 8340,
+  "newSignups30d": 5420,
+  "churnRatePercent": 1.8,
+  "avgSessionMins": 12.6,
+  "conversionRatePercent": 3.9
+}

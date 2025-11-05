@@ -7,7 +7,7 @@ import sidebarStyles from './lib/components/Sidebar/index.module.css';
 
 function App() {
   const [open, setOpen] = useState<boolean>(false);
-  const [category, setCategory] = useState<'user' | 'sales'>('sales');
+  const [category, setCategory] = useState<'user' | 'sales'>('user');
 
   const contentOffsetClass = open ? sidebarStyles.mainContentOffsetExpanded : sidebarStyles.mainContentOffsetCollapsed;
   return (
@@ -21,7 +21,7 @@ function App() {
         />
         <div className={contentOffsetClass} style={{ flex: 1, padding: '16px', minWidth: 0 }}>
           <ThemeToggle />
-          <Dashboard />
+          <Dashboard category={category} />
         </div>
       </div>
     </RangeProvider>

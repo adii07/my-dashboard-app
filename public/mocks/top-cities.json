@@ -1,0 +1,42 @@
+{
+  "columns": ["city", "country", "userCount", "percent"],
+  "rows": [
+    {
+      "city": "Mumbai",
+      "country": "India",
+      "userCount": 10240,
+      "percent": "19.6%"
+    },
+    {
+      "city": "Delhi",
+      "country": "India",
+      "userCount": 8740,
+      "percent": "16.7%"
+    },
+    {
+      "city": "Bengaluru",
+      "country": "India",
+      "userCount": 6220,
+      "percent": "11.9%"
+    },
+    {
+      "city": "New York",
+      "country": "USA",
+      "userCount": 5010,
+      "percent": "9.6%"
+    },
+    { "city": "London", "country": "UK", "userCount": 4320, "percent": "8.3%" },
+    {
+      "city": "Sydney",
+      "country": "Australia",
+      "userCount": 3010,
+      "percent": "5.8%"
+    },
+    {
+      "city": "Toronto",
+      "country": "Canada",
+      "userCount": 2780,
+      "percent": "5.3%"
+    }
+  ]
+}
