@@ -1,6 +1,6 @@
 import { WidgetConfig } from "../../types/Dashboard";
 import styles from './index.module.css'
-import { StatWidget, TableWidget } from "../Widgets";
+import { ChartWidget, StatWidget, TableWidget } from "../Widgets";
 import { useEffect, useState } from "react";
 
 const DashboardItem = (WidgetData: WidgetConfig) => {
@@ -23,7 +23,7 @@ const DashboardItem = (WidgetData: WidgetConfig) => {
             case "stat":
                 return <StatWidget title={title} data={data} />;
             case "chart":
-                return <>Chart Widget - Data:</>;
+                return <ChartWidget title={title} data={data} />;
             case "table":
                 return <TableWidget title={title} data={data} />;
             default:
