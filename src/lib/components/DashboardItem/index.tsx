@@ -11,11 +11,10 @@ const DashboardItem = (WidgetData: WidgetConfig) => {
         const fetchData = async () => {
             const response = await fetch(dataSource);
             const json = await response.json();
-            // For stat widgets we keep the whole object (contains growth); others just need the data array/value
             if (type === "stat" || type === "table") {
-                setData(json); // keep full object for range selection
+                setData(json);
             } else {
-                setData(json.data); // charts use json.data array
+                setData(json.data);
             }
         };
         fetchData();
@@ -39,8 +38,6 @@ const DashboardItem = (WidgetData: WidgetConfig) => {
     return (<>
         {renderWidget()}
     </>
-        // <div className={styles.widget_container}>
-        // </div>
     );
 };
 

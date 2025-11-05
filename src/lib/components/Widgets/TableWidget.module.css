@@ -20,7 +20,7 @@
   width: 100%;
   border-collapse: collapse;
   font-size: 0.85rem;
-  min-width: 520px; /* allow horizontal scroll on very small screens */
+  min-width: 520px;
 }
 
 .table caption {

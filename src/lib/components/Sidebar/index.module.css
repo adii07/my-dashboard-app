@@ -1,7 +1,6 @@
-/* Sidebar supports two widths: collapsed (56px) and expanded (240px) */
 .sidebar {
   position: fixed;
-  inset: 0 auto 0 0; /* top:0 left:0 bottom:0 */
+  inset: 0 auto 0 0;
   height: 100vh;
   background: var(--surface-bg);
   border-right: 1px solid var(--border);
@@ -59,9 +58,8 @@
   border-color: var(--accent);
 }
 
-/* Toggle button lives INSIDE the sidebar now */
 .internalToggle {
-  background: var(--surface-bg); /* neutral surface background */
+  background: var(--surface-bg);
   color: var(--text);
   width: 100%;
   border: 1px solid var(--border);
@@ -79,33 +77,31 @@
 }
 
 .internalToggle:hover {
-  background: var(--border); /* subtle hover */
+  background: var(--border);
   color: var(--text);
 }
 
-/* Collapsed state reduces width; content beyond width hidden */
 .collapsed {
-  --sidebar-width: 44px; /* slimmer collapsed width */
+  --sidebar-width: 44px;
 }
 
 .expanded {
   --sidebar-width: 240px;
 }
 
-/* Utility class for main content offset when sidebar expanded */
 .mainContentOffsetExpanded {
   margin-left: 240px;
   transition: margin-left 0.25s ease;
 }
 
 .mainContentOffsetCollapsed {
-  margin-left: 44px; /* match slimmer collapsed sidebar */
+  margin-left: 44px;
   transition: margin-left 0.25s ease;
 }
 
 @media (max-width: 900px) {
   .mainContentOffsetExpanded,
   .mainContentOffsetCollapsed {
-    margin-left: 0; /* stack on small screens */
+    margin-left: 0;
   }
 }
