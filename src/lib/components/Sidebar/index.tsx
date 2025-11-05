@@ -9,7 +9,7 @@ interface SidebarProps {
   onToggle: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ open, category, onSelect, onToggle }) => {
+const Sidebar = ({ open, category, onSelect, onToggle }: SidebarProps) => {
   const { theme } = useTheme();
   const iconColor = theme === 'dark' ? 'FFFFFF' : '000000';
   const iconSrc = `https://img.icons8.com/?size=100&id=97654&format=png&color=${iconColor}`;

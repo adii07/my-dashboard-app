@@ -7,8 +7,11 @@ import sidebarStyles from './lib/components/Sidebar/index.module.css';
 
 function App() {
   const [open, setOpen] = useState<boolean>(false);
-  const [category, setCategory] = useState<'user' | 'sales'>('user');
-
+  const [category, setCategory] = useState<'user' | 'sales'>('sales');
+  const selectConfig=(value: 'user' | 'sales')=>{
+    setOpen(false);
+    setCategory(value);
+  }
   const contentOffsetClass = open ? sidebarStyles.mainContentOffsetExpanded : sidebarStyles.mainContentOffsetCollapsed;
   return (
     <RangeProvider>
@@ -16,7 +19,7 @@ function App() {
         <Sidebar
           open={open}
           category={category}
-          onSelect={setCategory}
+          onSelect={selectConfig}
           onToggle={() => setOpen(o => !o)}
         />
         <div className={contentOffsetClass} style={{ flex: 1, padding: '16px', minWidth: 0 }}>

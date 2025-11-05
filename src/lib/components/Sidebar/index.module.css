@@ -105,3 +105,36 @@
     margin-left: 0;
   }
 }
+
+
+@media (max-width: 600px) {
+  .sidebar{
+     position: fixed;
+    inset: auto 10px 10px 10px;
+    width: fit-content;
+    height: fit-content;
+    background: var(--surface-bg);
+    padding: 0;
+    margin: 0;
+    border-radius: 6px;
+    border-right: none;
+    box-shadow: none;
+}
+.internalToggle{
+    width: fit-content;
+    align-items: center;
+    background-color: white;
+}
+.sidebarHeader{
+    display: none;
+}
+.navButton{
+     background-color: white;
+
+}
+.navButtonActive {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+}

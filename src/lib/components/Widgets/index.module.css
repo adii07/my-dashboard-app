@@ -51,3 +51,9 @@
 .growthPositive { color: #059669; }
 .growthNegative { color: #dc2626; }
 .growthNeutral { color: #6b7280; }
+
+@media (max-width: 600px) {
+    .widget{
+        min-width: 300px;
+    }
+}
