@@ -5,13 +5,13 @@ export const dashboardConfig: DashboardConfig = [
     id: "1",
     type: "stat",
     title: "Total Users",
-    dataSource: "/mocks/usersSummary.json",
+    dataSource: "/mocks/totalUser.json",
   },
   {
     id: "2",
     type: "stat",
     title: "Total Orders",
-    dataSource: "/mocks/usersSummary.json",
+    dataSource: "/mocks/totalItems.json",
   },
   {
     id: "3",

@@ -1,0 +1,16 @@
+.stat_widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 12px;
+}
+
+@media (min-width: 768px) {
+    .stat_widget {
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+    }
+}
+
