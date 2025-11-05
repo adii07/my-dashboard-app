@@ -1,10 +1,13 @@
 import styles from './index.module.css';
 import Filter from '../Filter';
-const Header = () => {
+import { DashboardConfigTypes } from '../../types/Dashboard';
+
+
+const Header = ({ category }: DashboardConfigTypes) => {
     return (
         <header className={styles.header_container}>
             <h1 className={styles.header_title}>My Dashboard App</h1>
-            <Filter />
+            {category==='sales' && <Filter />}
         </header>
     );
 }

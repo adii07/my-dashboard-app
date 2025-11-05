@@ -9,3 +9,8 @@ export interface WidgetConfig {
 }
 
 export type DashboardConfig = WidgetConfig[];
+
+
+export type DashboardConfigTypes={
+  category: 'user' | 'sales'
+};
