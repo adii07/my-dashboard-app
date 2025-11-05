@@ -1,7 +1,6 @@
 import { TableWidgetProps } from "../../types/WidgetTypes";
 import styles from './TableWidget.module.css'
 const TableWidget = ({ title, data }: TableWidgetProps) => {
-    console.log("Table Widget Data:", data);
     return (
         <div>
             <h4>{title}</h4>
@@ -17,11 +16,11 @@ const TableWidget = ({ title, data }: TableWidgetProps) => {
                     <tbody className={styles.tbody}>
                         {data.rows.map((row) => (
                             <tr key={row.productId} tabIndex={0}>
-                                <td>{row.productId}</td>
-                                <td>{row.name}</td>
-                                <td>{row.category}</td>
-                                <td className={styles.cell_numeric}>{row.unitsSold}</td>
-                                <td className={styles.cell_numeric}>{row.revenue}</td>
+                                <td>{row[data.columns[0]]}</td>
+                                <td>{row[data.columns[1]]}</td>
+                                <td>{row[data.columns[2]]}</td>
+                                <td className={styles.cell_numeric}>{row[data.columns[3]]}</td>
+                                <td className={styles.cell_numeric}>{row[data.columns[4]]}</td>
                             </tr>
                         ))}
                     </tbody>
