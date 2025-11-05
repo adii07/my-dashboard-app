@@ -26,16 +26,16 @@ export const dashboardConfig: DashboardConfig = [
     dataSource: "/mocks/returnedOrders.json",
   },
   {
-    id: "5",
-    type: "chart",
-    title: "Monthly Sales Overview",
-    dataSource: "/mocks/salesSummary.json",
-  },
-  {
     id: "6",
     type: "table",
     title: "Top Products Sold",
     dataSource: "/mocks/topProducts.json",
+  },
+  {
+    id: "5",
+    type: "chart",
+    title: "Monthly Sales Overview",
+    dataSource: "/mocks/salesSummary.json",
   },
   {
     id: "7",

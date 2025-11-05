@@ -1,6 +1,18 @@
-import { TableWidgetProps } from "../../types/WidgetTypes";
-import styles from './TableWidget.module.css'
-const TableWidget = ({ title, data }: TableWidgetProps) => {
+import { TableWidgetProps, TableRangeEntry } from "../../types/WidgetTypes";
+import styles from './TableWidget.module.css';
+import { useRange } from "../../context/RangeContext";
+
+const TableWidget = ({ title, rawData }: TableWidgetProps) => {
+    const { range } = useRange();
+    let entry: TableRangeEntry | undefined;
+    if (rawData.ranges) {
+        entry = rawData.ranges[range] || rawData.ranges['1m'] || Object.values(rawData.ranges)[0];
+    } else if (rawData.data) {
+        entry = rawData.data;
+    }
+    if (!entry) return <div className={styles.table_widget}><h4>{title}</h4><p>Loading...</p></div>;
+
+    const { columns, rows } = entry;
     return (
         <div className={styles.table_widget}>
             <h4>{title}</h4>
@@ -8,19 +20,17 @@ const TableWidget = ({ title, data }: TableWidgetProps) => {
                 <table className={styles.table}>
                     <thead className={styles.thead}>
                         <tr>
-                            {data.columns.map((column) => (
+                            {columns.map((column) => (
                                 <th key={column}>{column}</th>
                             ))}
                         </tr>
                     </thead>
                     <tbody className={styles.tbody}>
-                        {data.rows.map((row) => (
-                            <tr key={row.productId} tabIndex={0}>
-                                <td>{row[data.columns[0]]}</td>
-                                <td>{row[data.columns[1]]}</td>
-                                <td>{row[data.columns[2]]}</td>
-                                <td className={styles.cell_numeric}>{row[data.columns[3]]}</td>
-                                <td className={styles.cell_numeric}>{row[data.columns[4]]}</td>
+                        {rows.map((row) => (
+                            <tr key={(row as any).productId || JSON.stringify(row)} tabIndex={0}>
+                                {columns.map((col) => (
+                                    <td key={col} className={typeof row[col] === 'number' ? styles.cell_numeric : undefined}>{row[col]}</td>
+                                ))}
                             </tr>
                         ))}
                     </tbody>
@@ -29,4 +39,5 @@ const TableWidget = ({ title, data }: TableWidgetProps) => {
         </div>
     );
 };
+
 export default TableWidget;
