@@ -1,40 +1,42 @@
 {
-  "columns": ["productId", "name", "category", "unitsSold", "revenue"],
-  "rows": [
-    {
-      "productId": "A123",
-      "name": "Echo Dot (5th Gen)",
-      "category": "Electronics",
-      "unitsSold": 1250,
-      "revenue": 56250
-    },
-    {
-      "productId": "B456",
-      "name": "Fire TV Stick 4K",
-      "category": "Electronics",
-      "unitsSold": 940,
-      "revenue": 56400
-    },
-    {
-      "productId": "C789",
-      "name": "Kindle Paperwhite",
-      "category": "Books",
-      "unitsSold": 710,
-      "revenue": 78100
-    },
-    {
-      "productId": "D234",
-      "name": "Amazon Basics Laptop Stand",
-      "category": "Office",
-      "unitsSold": 630,
-      "revenue": 18900
-    },
-    {
-      "productId": "E567",
-      "name": "Instant Pot Duo",
-      "category": "Home & Kitchen",
-      "unitsSold": 580,
-      "revenue": 52200
-    }
-  ]
+  "data": {
+    "columns": ["productId", "name", "category", "unitsSold", "revenue"],
+    "rows": [
+      {
+        "productId": "A123",
+        "name": "Echo Dot (5th Gen)",
+        "category": "Electronics",
+        "unitsSold": 1250,
+        "revenue": 56250
+      },
+      {
+        "productId": "B456",
+        "name": "Fire TV Stick 4K",
+        "category": "Electronics",
+        "unitsSold": 940,
+        "revenue": 56400
+      },
+      {
+        "productId": "C789",
+        "name": "Kindle Paperwhite",
+        "category": "Books",
+        "unitsSold": 710,
+        "revenue": 78100
+      },
+      {
+        "productId": "D234",
+        "name": "Amazon Basics Laptop Stand",
+        "category": "Office",
+        "unitsSold": 630,
+        "revenue": 18900
+      },
+      {
+        "productId": "E567",
+        "name": "Instant Pot Duo",
+        "category": "Home & Kitchen",
+        "unitsSold": 580,
+        "revenue": 52200
+      }
+    ]
+  }
 }
