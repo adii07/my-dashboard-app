@@ -10,18 +10,23 @@ const DashboardItem = (WidgetData: WidgetConfig) => {
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(dataSource);
-            const data = await response.json();
-            setData(data.data);
+            const json = await response.json();
+            // For stat widgets we keep the whole object (contains growth); others just need the data array/value
+            if (type === "stat") {
+                setData(json); // { data: number, growth?: number }
+            } else {
+                setData(json.data);
+            }
         };
         fetchData();
-    }, [dataSource]);
+    }, [dataSource, type]);
 
     const renderWidget = () => {
         if (!data) return <>Loading...</>;
 
         switch (type) {
             case "stat":
-                return <StatWidget title={title} data={data} />;
+                return <StatWidget title={title} data={data.data} growth={data.growth} />;
             case "chart":
                 return <ChartWidget title={title} data={data} />;
             case "table":

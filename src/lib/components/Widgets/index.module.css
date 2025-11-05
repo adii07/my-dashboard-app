@@ -23,3 +23,31 @@
         margin: 0;
     }
 }
+
+.valueRow {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.growth {
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.05);
+}
+
+[data-theme='dark'] .growth {
+    background: rgba(255,255,255,0.1);
+}
+
+.growthPositive { color: #059669; }
+.growthNegative { color: #dc2626; }
+.growthNeutral { color: #6b7280; }

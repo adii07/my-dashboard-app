@@ -1,6 +1,7 @@
 export type StatWidgetType = {
     title: string;
     data: number;
+    growth?: number; // percentage growth (positive, negative, or zero)
 };
 
 // Derived from public/mocks/topProducts.json rows
