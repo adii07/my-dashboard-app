@@ -1,0 +1,41 @@
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeletonRoot {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.line {
+  height: 14px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.06) 25%, rgba(0,0,0,0.12) 37%, rgba(0,0,0,0.06) 63%);
+  background-size: 800px 100%;
+  animation: shimmer 1.2s linear infinite forwards;
+}
+[data-theme='dark'] .line {
+  background: linear-gradient(90deg, rgba(255,255,255,0.08) 25%, rgba(255,255,255,0.16) 37%, rgba(255,255,255,0.08) 63%);
+  background-size: 800px 100%;
+}
+
+.stat { width: 120px; }
+.small { width: 60px; }
+.medium { width: 40%; }
+.wide { width: 80%; }
+
+.rows { display: flex; flex-direction: column; gap: 8px; }
+.row { display: flex; gap: 12px; }
+.cell { flex: 1; height: 12px; border-radius: 4px; }
+
+.chartArea { height: 160px; border-radius: 8px; position: relative; overflow: hidden; }
+.chartArea::before { content: ''; position: absolute; inset:0; background: linear-gradient(90deg, rgba(0,0,0,0.06) 25%, rgba(0,0,0,0.12) 37%, rgba(0,0,0,0.06) 63%); background-size: 800px 100%; animation: shimmer 1.4s linear infinite; }
+[data-theme='dark'] .chartArea::before { background: linear-gradient(90deg, rgba(255,255,255,0.08) 25%, rgba(255,255,255,0.16) 37%, rgba(255,255,255,0.08) 63%); }
+
+.visuallyHidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); border:0; }

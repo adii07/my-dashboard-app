@@ -1,6 +1,7 @@
 import { WidgetConfig } from "../../types/Dashboard";
 import styles from './index.module.css'
 import { ChartWidget, StatWidget, TableWidget } from "../Widgets";
+import Skeleton from "../Loading/Skeleton";
 import { useEffect, useState } from "react";
 
 const DashboardItem = (WidgetData: WidgetConfig) => {
@@ -44,7 +45,7 @@ const DashboardItem = (WidgetData: WidgetConfig) => {
     }, [dataSource, type, field, title]);
 
     const renderWidget = () => {
-        if (!data) return <>Loading...</>;
+        if (!data) return <Skeleton type={type} title={title} />;
 
         switch (type) {
             case "stat":
