@@ -1,16 +1,25 @@
+.widget {
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 .stat_widget {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
     gap: 12px;
-}
-
-@media (min-width: 768px) {
-    .stat_widget {
-        flex-direction: row;
-        align-items: center;
-        gap: 0;
+    width: fit-content;
+    min-width: 150px;
+    
+    .title{
+        padding: 0;
+        margin: 0;
+    }
+    p {
+         padding: 0;
+        margin: 0;
     }
 }
-

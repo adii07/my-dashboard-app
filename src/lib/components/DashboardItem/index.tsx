@@ -31,10 +31,11 @@ const DashboardItem = (WidgetData: WidgetConfig) => {
         }
     }
 
-    return (
-        <div className={styles.widget_container}>
-            {renderWidget()}
-        </div>
+    return (<>
+        {renderWidget()}
+    </>
+        // <div className={styles.widget_container}>
+        // </div>
     );
 };
 

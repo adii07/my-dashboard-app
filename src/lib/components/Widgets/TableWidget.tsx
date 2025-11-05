@@ -2,7 +2,7 @@ import { TableWidgetProps } from "../../types/WidgetTypes";
 import styles from './TableWidget.module.css'
 const TableWidget = ({ title, data }: TableWidgetProps) => {
     return (
-        <div>
+        <div className={styles.table_widget}>
             <h4>{title}</h4>
             <div className={styles.wrapper}>
                 <table className={styles.table}>

@@ -4,6 +4,7 @@
     margin: 12px;
     border: 1px solid var(--border);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: fit-content;
 }
 
 .statWidget{
@@ -11,4 +12,5 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    row-gap: 12px;
 }

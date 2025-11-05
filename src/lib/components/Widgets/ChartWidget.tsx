@@ -1,6 +1,9 @@
 import HighchartsReact from "highcharts-react-official";
 import { useMemo } from "react";
 import Highcharts from "highcharts";
+import styles from './index.module.css';
+import cx from "classnames";
+
 const ChartWidget = ({ title, data }: any) => {
     const options: Highcharts.Options = useMemo(() => {
         const categories = data.map((d:any) => d.month);
@@ -54,7 +57,7 @@ const ChartWidget = ({ title, data }: any) => {
         };
     }, [data]);
 
-    return <div><h4>{title}</h4>
+    return <div className={cx(styles.widget,styles.chart_widget)}><h4>{title}</h4>
         <HighchartsReact highcharts={Highcharts} options={options} />
         </div>;
 }

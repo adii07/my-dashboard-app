@@ -16,13 +16,13 @@ export const dashboardConfig: DashboardConfig = [
   {
     id: "3",
     type: "stat",
-    title: "Total Successful Orders",
+    title: "Successful Orders",
     dataSource: "/mocks/successfulOrders.json",
   },
   {
     id: "4",
     type: "stat",
-    title: "Total Returned Orders",
+    title: "Returned Orders",
     dataSource: "/mocks/returnedOrders.json",
   },
   {
@@ -46,13 +46,13 @@ export const dashboardConfig: DashboardConfig = [
   {
     id: "8",
     type: "stat",
-    title: "New Users",
+    title: "Total Revenue",
     dataSource: "/mocks/newUsers.json",
   },
-  {
-    id: "9",
-    type: "stat",
-    title: "Repeating Users",
-    dataSource: "/mocks/repeatingUsers.json",
-  },
+  // {
+  //   id: "9",
+  //   type: "stat",
+  //   title: "Repeating Users",
+  //   dataSource: "/mocks/repeatingUsers.json",
+  // },
 ];
